@@ -1,6 +1,3 @@
-/*
-
-
 
 function getTextElementValueById(elementId){
     const phoneTotalElement = document.getElementById(elementId);
@@ -27,8 +24,8 @@ function calculateSubTotal(){
     const taxAmount = parseFloat(taxAmountString);
     setTextElementValueById('tax-amount', taxAmount);
 
-    const finalAmount = currentSubTotal + taxAmount;
+ 
+    const finalAmount =(currentSubTotal + taxAmount).toFixed(2);
     setTextElementValueById('final-total', finalAmount);
 }
 
-*/

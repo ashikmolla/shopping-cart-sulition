@@ -6,20 +6,24 @@
 5. set the value to the case number field
 */
 
-/*
 
-function updateCaseNumber(isIncrease){
+
+function updateCaseNumber(isIncrease) {
     const caseNumberField = document.getElementById('case-number-field');
     const caseNumberString = caseNumberField.value;
     const previousCaseNumber = parseInt(caseNumberString);
 
     let newCaseNumber;
 
-    if(isIncrease === true){
+    if (isIncrease === true) {
         newCaseNumber = previousCaseNumber + 1;
     }
-    else{
-        newCaseNumber = previousCaseNumber - 1;
+    else {
+        if (previousCaseNumber > 0) {
+            newCaseNumber = previousCaseNumber - 1;
+        } else {
+            newCaseNumber = previousCaseNumber - 0;
+        }
     }
 
     caseNumberField.value = newCaseNumber;
@@ -27,24 +31,31 @@ function updateCaseNumber(isIncrease){
     return newCaseNumber;
 }
 
-function updateCaseTotalPrice(newCaseNumber){
+function updateCaseTotalPrice(newCaseNumber) {
     const caseTotalPrice = newCaseNumber * 59;
     const caseTotalElement = document.getElementById('case-total');
     caseTotalElement.innerText = caseTotalPrice;
-} 
+}
 
-document.getElementById('btn-case-plus').addEventListener('click', function(){
+document.getElementById('btn-case-plus').addEventListener('click', function () {
     const newCaseNumber = updateCaseNumber(true);
 
     updateCaseTotalPrice(newCaseNumber);
     calculateSubTotal();
 });
 
-document.getElementById('btn-case-minus').addEventListener('click', function(){
+document.getElementById('btn-case-minus').addEventListener('click', function () {
     const newCaseNumber = updateCaseNumber(false);
-    
+
     updateCaseTotalPrice(newCaseNumber);
     calculateSubTotal();
 })
 
-*/
+
+
+
+
+
+
+
+
